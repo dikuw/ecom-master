@@ -1,4 +1,4 @@
-Ecommerce Store Example
+eCommerce Store Example
 
 - React
 - GraphQL
