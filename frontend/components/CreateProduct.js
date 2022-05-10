@@ -1,11 +1,7 @@
-import { useState } from 'react';
+import useForm from '../lib/useForm';
 
 export default function CreateProduct() {
-  const [name, setName] = useState('');
-  
-  const handleChange = (e) => {
-    setName(e.target.value);
-  }
+  const { inputs, handleChange } = useForm;
 
   return (
     <form>
