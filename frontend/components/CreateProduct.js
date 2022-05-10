@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 export default function CreateProduct() {
+  const [name, setName] = useState('');
+  
   return (
     <form>
       <label htmlFor="name">
