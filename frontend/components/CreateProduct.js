@@ -1,7 +1,11 @@
 import useForm from '../lib/useForm';
 
 export default function CreateProduct() {
-  const { inputs, handleChange } = useForm;
+  const { inputs, handleChange } = useForm({
+    name: 'enter name',
+    price: 999,
+    description: 'enter description',
+  });
 
   return (
     <form>
@@ -12,7 +16,7 @@ export default function CreateProduct() {
           id="name" 
           name="name" 
           placeholder="Name" 
-          value={name} 
+          value={inputs.name} 
           onChange={handleChange} 
         />
       </label>
