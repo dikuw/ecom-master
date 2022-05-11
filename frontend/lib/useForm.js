@@ -4,9 +4,15 @@ export default function useForm(initial = {}) {
   const [inputs, setInputs] = useState(initial);
 
   function handleChange(e) {
+    let { value, name, type } = e.target;
+
+    if (type === 'number') {
+      value = parseInt(value);
+    }
+
     setInputs({
       ...inputs,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   }
 
