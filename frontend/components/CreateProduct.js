@@ -44,8 +44,8 @@ export default function CreateProduct() {
         />
       </label>
 
-      <button type="button" onClick={resetForm}>Reset Form</button>
-      <button type="button" onClick={clearForm}>Clear Form</button>
+      <button type="submit">+ Add Product</button>
+
     </Form>
   )
 }
