@@ -18,6 +18,7 @@ export default function CreateProduct() {
         <label htmlFor="image">
           Image
           <input 
+            required
             type="file" 
             id="image" 
             name="image" 
