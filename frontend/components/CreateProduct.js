@@ -10,7 +10,10 @@ export default function CreateProduct() {
   });
 
   return (
-    <Form>
+    <Form onSubmit={(e) =>{
+      e.preventDefault();
+      console.log(inputs);
+    }}>
       <fieldset>
         <label htmlFor="image">
           Image
@@ -45,7 +48,7 @@ export default function CreateProduct() {
         </label>
         <label htmlFor="description">
           Description
-          <input 
+          <textarea 
             type="text" 
             id="description" 
             name="description" 
