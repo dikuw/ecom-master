@@ -3,6 +3,7 @@ import Form from './styles/Form';
 
 export default function CreateProduct() {
   const { inputs, handleChange, resetForm, clearForm } = useForm({
+    image: '',
     name: 'enter name',
     price: 999,
     description: 'enter description',
