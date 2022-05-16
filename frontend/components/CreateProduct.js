@@ -61,5 +61,5 @@ export default function CreateProduct() {
         <button type="submit">+ Add Product</button>
       </fieldset>
     </Form>
-  )
+  );
 }
