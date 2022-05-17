@@ -9,5 +9,5 @@ export default function Nav() {
       <Link href="/orders">Orders</Link>
       <Link href="/account">Account</Link>
     </NavStyles>
-  )
+  );
 }
