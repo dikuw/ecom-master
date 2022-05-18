@@ -17,7 +17,7 @@ function app({ Component, pageProps, apollo }) {
         <Component {...pageProps} />
       </Page>
     </ApolloProvider>
-  )
+  );
 }
 
 app.getInitialProps = async function({ Component, ctx }) {
