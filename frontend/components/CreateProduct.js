@@ -49,7 +49,7 @@ export default function CreateProduct() {
   return (
     <Form onSubmit={async (e) => {
       e.preventDefault();
-      const res = await createProduct();
+      await createProduct();
       clearForm();
     }}>
       <DisplayError error={error} />
