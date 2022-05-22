@@ -3,6 +3,8 @@ import gql from 'graphql-tag';
 import useForm from '../lib/useForm';
 import Form from './styles/Form';
 
+import DisplayError from './ErrorMessage';
+
 const CREATE_PRODUCT_MUTATION = gql`
   mutation CREATE_PRODUCT_MUTATION(
     $name: String!
@@ -40,14 +42,17 @@ export default function CreateProduct() {
     description: 'enter description',
   });
 
-  const payload = useMutation();
+  const [ createProduct, { loading, error, data }] = useMutation(CREATE_PRODUCT_MUTATION, {
+    variables: inputs,
+  });
 
   return (
-    <Form onSubmit={(e) =>{
+    <Form onSubmit={async (e) => {
       e.preventDefault();
-      console.log(inputs);
+      const res = await createProduct();
     }}>
-      <fieldset>
+      <DisplayError error={error} />
+      <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor="image">
           Image
           <input 
