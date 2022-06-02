@@ -3,8 +3,8 @@ import { useQuery } from "@apollo/client";
 import DisplayError from './ErrorMessage';
 
 const SINGLE_ITEM_QUERY = gql `
-  query {
-    Product(where: { id: "6258948ac0401a13982109e0" }) {
+  query SINGLE_ITEM_QUERY($id: ID!) {
+    Product(where: { id: $id }) {
       name
       price
       description
@@ -13,7 +13,11 @@ const SINGLE_ITEM_QUERY = gql `
 `;
 
 export default function SingleProduct({ id }) {
-  const { data, loading, error } = useQuery(SINGLE_ITEM_QUERY);
+  const { data, loading, error } = useQuery(SINGLE_ITEM_QUERY, {
+    variables: {
+      id: id,
+    },
+  });
 
   if (loading) return <p>Loading...</p>;
 
