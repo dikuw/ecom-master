@@ -23,9 +23,11 @@ export default function SingleProduct({ id }) {
 
   if (error) return <DisplayError error={error} />;
 
+  const { Product } = data;
+
   return (
     <div>
-      <h2>{data.Product.name}</h2>
+      <h2>{Product.name}</h2>
     </div>
   );
 }
