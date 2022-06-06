@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 import { useQuery } from "@apollo/client";
 import DisplayError from './ErrorMessage';
+import Head from 'next/head';
 
 const SINGLE_ITEM_QUERY = gql `
   query SINGLE_ITEM_QUERY($id: ID!) {
@@ -34,6 +35,9 @@ export default function SingleProduct({ id }) {
 
   return (
     <div>
+      <Head>
+        <title>eCom Store | {Product.name}</title>
+      </Head>
       <img src={Product.photo.image.publicUrlTransformed} alt={Product.photo.image.altText} />
       <div className="details">
         <h2>{Product.name}</h2>
