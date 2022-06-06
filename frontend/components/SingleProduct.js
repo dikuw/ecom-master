@@ -8,6 +8,13 @@ const SINGLE_ITEM_QUERY = gql `
       name
       price
       description
+      id
+      photo {
+        altText
+        image {
+          publicUrlTransformed       
+        }
+      }
     }
   }
 `;
@@ -27,7 +34,12 @@ export default function SingleProduct({ id }) {
 
   return (
     <div>
-      <h2>{Product.name}</h2>
+      <img src={Product.photo.image.publicUrlTransformed} alt={Product.photo.image.altText} />
+      <div className="details">
+        <h2>{Product.name}</h2>
+        <p>{Product.description}</p>
+      </div>
+      
     </div>
   );
 }
